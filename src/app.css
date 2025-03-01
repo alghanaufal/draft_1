@@ -1,0 +1,132 @@
+.wrapper .button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper .svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.wrapper .svgIcon path {
+  fill: white;
+}
+
+.wrapper .button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(181, 160, 255);
+  align-items: center;
+}
+
+.wrapper .button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(300%);
+}
+
+.wrapper .button::before {
+  position: absolute;
+  bottom: -30px;
+  content: "Buka Undangan";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 10px;
+}
+
+.wrapper .button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
+.gallery {
+  --s: 100px; /* Ukuran gambar default untuk mobile */
+  --g: 5px;  /* Jarak antar gambar default untuk mobile */
+  --f: 1.3;  /* Faktor skala saat hover */
+
+  display: grid;
+  gap: var(--g);
+  width: 100%; /* Lebar penuh pada mobile */
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom pada mobile */
+  margin: 0 auto;
+}
+
+.gallery-item {
+  overflow: hidden; /* Pastikan zoom tidak memengaruhi ukuran container */
+  transition: transform 0.35s linear; /* Animasi hover */
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: transform 0.35s linear, filter 0.35s linear; /* Animasi hover */
+}
+
+.gallery-img:hover {
+  filter: grayscale(0);
+  transform: scale(var(--f)); /* Zoom gambar */
+}
+
+/* Animasi muncul dari bawah ke atas */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Class untuk animasi */
+.gallery-animate {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Tablet dan layar yang lebih besar */
+@media (min-width: 480px) {
+  .gallery {
+    --s: 100px; /* Ukuran gambar lebih besar untuk tablet */
+    --g: 8px;   /* Jarak antar gambar lebih besar untuk tablet */
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom pada tablet */
+  }
+}
+
+/* Desktop dan layar yang lebih besar */
+@media (min-width: 720px) {
+  .gallery {
+    --s: 150px; /* Ukuran gambar lebih besar untuk desktop */
+    --g: 10px;  /* Jarak antar gambar lebih besar untuk desktop */
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom pada desktop */
+    width: calc(3 * var(--s) + 2 * var(--g)); /* Lebar dinamis berdasarkan ukuran dan jarak */
+  }
+}
+
+/* Layar sangat besar */
+@media (min-width: 1024px) {
+  .gallery {
+    --s: 200px; /* Ukuran gambar lebih besar untuk layar sangat besar */
+    --g: 12px;  /* Jarak antar gambar lebih besar untuk layar sangat besar */
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom pada layar sangat besar */
+  }
+}
