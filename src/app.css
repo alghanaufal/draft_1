@@ -102,31 +102,3 @@
 .gallery-animate {
   animation: slideUp 0.8s ease-out forwards;
 }
-
-/* Tablet dan layar yang lebih besar */
-@media (min-width: 480px) {
-  .gallery {
-    --s: 100px; /* Ukuran gambar lebih besar untuk tablet */
-    --g: 8px;   /* Jarak antar gambar lebih besar untuk tablet */
-    grid-template-columns: repeat(3, 1fr); /* 3 kolom pada tablet */
-  }
-}
-
-/* Desktop dan layar yang lebih besar */
-@media (min-width: 720px) {
-  .gallery {
-    --s: 150px; /* Ukuran gambar lebih besar untuk desktop */
-    --g: 10px;  /* Jarak antar gambar lebih besar untuk desktop */
-    grid-template-columns: repeat(3, 1fr); /* 3 kolom pada desktop */
-    width: calc(3 * var(--s) + 2 * var(--g)); /* Lebar dinamis berdasarkan ukuran dan jarak */
-  }
-}
-
-/* Layar sangat besar */
-@media (min-width: 1024px) {
-  .gallery {
-    --s: 200px; /* Ukuran gambar lebih besar untuk layar sangat besar */
-    --g: 12px;  /* Jarak antar gambar lebih besar untuk layar sangat besar */
-    grid-template-columns: repeat(4, 1fr); /* 4 kolom pada layar sangat besar */
-  }
-}
