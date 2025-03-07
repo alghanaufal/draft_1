@@ -112,9 +112,10 @@ export default function App() {
       className="relative min-h-screen bg-fixed bg-cover bg-center flex flex-col"
       style={{ backgroundImage: `url(${bgfull})` }}
     >
-      {/* Overlay dengan opasitas 70% */}
-      <div className="absolute inset-0 bg-black opacity-35"></div>
-      <div className="relative flex-grow max-w-xl mx-auto border-l border-r border-white">
+      <div
+        className="relative flex-grow max-w-xl mx-auto border-l border-r border-white"
+        style={{ backgroundImage: `url(${bgfull})` }}
+      >
         {/* Konten */}
         <div className="relative flex-grow">
           {/* Bagian Landing */}
