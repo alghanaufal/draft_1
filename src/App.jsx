@@ -46,7 +46,9 @@ export default function App() {
       console.log("Fetched data:", data);
     }
   }
-  async function createPost() {
+  async function createPost(event) {
+    event.preventDefault(); // Mencegah perilaku default form
+
     const { data, error } = await supabase.from("message").insert([
       {
         name,
@@ -243,51 +245,61 @@ export default function App() {
         <div className="relative flex-grow">
           {/* Bagian Landing */}
           <div
-            className="bg-cover bg-center h-screen flex flex-col items-center justify-center text-center p-8 w-full"
+            className="bg-cover bg-center h-screen flex p-8 w-full relative"
             // style={{ backgroundImage: `url(${bgImage})` }}
           >
-            <div className="w-80 max-w-md bg-white rounded-t-full shadow-lg relative text-center">
-              <img
-                src="/chibi.PNG"
-                alt="Nofridho & Nadya"
-                className="w-full h-full object-cover"
-              />
-              {/* <h2 className="text-lg font-serif font-semibold mt-2">
+            <div
+              className="rounded-3xl bg-white bg-opacity-50 flex flex-col items-center justify-center text-center"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
+            >
+              <div className="w-80 max-w-md bg-white rounded-t-full shadow-lg relative text-center">
+                <img
+                  src="/chibi.PNG"
+                  alt="Nofridho & Nadya"
+                  className="w-full h-full object-cover"
+                />
+                {/* <h2 className="text-lg font-serif font-semibold mt-2">
                 AKAD NIKAH
-              </h2>
-              <p className="text-gray-600 mt-2 font-serif font-medium">
+                </h2>
+                <p className="text-gray-600 mt-2 font-serif font-medium">
                 Senin, 03 Mei 2025
               </p>
               <p className="text-gray-600">07.00 WIB - Selesai</p>
-
+              
               <div className="mt-4 w-full flex justify-center">
-                <iframe
-                  className="w-60 h-40 rounded-lg shadow-md"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.671825365702!2d110.37881347413379!3d-7.821435277047214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57910b3c5d75%3A0xdeb4377e2d70c6d5!2sGrand%20Ballroom%20Hotel%20Santika!5e0!3m2!1sen!2sid!4v1618911111812!5m2!1sen!2sid"
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe> 
+              <iframe
+              className="w-60 h-40 rounded-lg shadow-md"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.671825365702!2d110.37881347413379!3d-7.821435277047214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57910b3c5d75%3A0xdeb4377e2d70c6d5!2sGrand%20Ballroom%20Hotel%20Santika!5e0!3m2!1sen!2sid!4v1618911111812!5m2!1sen!2sid"
+              allowFullScreen
+              loading="lazy"
+              ></iframe> 
               </div> */}
+              </div>
+              <h2 className="text-sm text-gray-500 m-2">THE WEDDING OF</h2>
+              <h1 className="text-5xl font-serif font-bold mb-4">
+                NOFRIDHO & NADYA
+              </h1>
+              <p className="text-gray-600 mb-4">
+                Kepada Yth.
+                <br />
+                <span className="font-semibold font-serif">Tamu Undangan</span>
+              </p>
+              <p className="text-sm text-gray-500 mb-6">
+                Dengan hormat, kami mengundang Anda untuk menghadiri pernikahan
+                kami.
+              </p>
+              <button
+                onClick={handleScroll}
+                className="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition"
+              >
+                Buka Undangan
+              </button>
             </div>
-            <h2 className="text-sm text-gray-500 m-2">THE WEDDING OF</h2>
-            <h1 className="text-5xl font-serif font-bold mb-4">
-              NOFRIDHO & NADYA
-            </h1>
-            <p className="text-gray-600 mb-4">
-              Kepada Yth.
-              <br />
-              <span className="font-semibold font-serif">Tamu Undangan</span>
-            </p>
-            <p className="text-sm text-gray-500 mb-6">
-              Dengan hormat, kami mengundang Anda untuk menghadiri pernikahan
-              kami.
-            </p>
-            <button
-              onClick={handleScroll}
-              className="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition"
-            >
-              Buka Undangan
-            </button>
+            <img
+              src="/rumahgadang.png"
+              alt="Nofridho & Nadya"
+              className="w-100 h-58 absolute -bottom-18 left-1/2 transform -translate-x-1/2"
+            />
           </div>
 
           {/* Undangan Section */}
