@@ -1,3 +1,65 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pullIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.animate-pull-in {
+  animation: pullIn 1.5s ease-in-out forwards;
+}
+
+.animate-zoomin-f {
+  animation: zoomIn 1.0s ease-in-out forwards;
+}
+
+.animate-zoomin-s {
+  animation: zoomIn 1.5s ease-in-out forwards;
+}
+
+.animate-zoom-out {
+  animation: zoomOut 1.5s ease-in-out forwards;
+}
+
 body.no-scroll {
   overflow: hidden;
 }
