@@ -4,7 +4,7 @@ const CountdownSection = ({ ref5, inView5, timeLeft, bgImage }) => {
   return (
     <div
       ref={ref5}
-      className="pb-12 text-center"
+      className="pt-8 pb-12 text-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <h2

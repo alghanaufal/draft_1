@@ -9,9 +9,8 @@ const RSVPSection = ({
   createPost,
   attending,
   notAttending,
-  bgImage
+  bgImage,
 }) => {
-
   const { quantity, name, presence, address } = post;
   return (
     <div
@@ -26,7 +25,7 @@ const RSVPSection = ({
       >
         {/* Judul */}
         <h2
-          className={`text-2xl font-semibold mb-4 text-gray-700 ${
+          className={`text-2xl md:text-4xl font-serif font-bold mb-4 text-gray-700 ${
             inView7 ? "animate-fade-in-up delay-100" : "opacity-0"
           }`}
         >
@@ -66,15 +65,6 @@ const RSVPSection = ({
             }`}
           />
           <input
-            type="number"
-            placeholder="Jumlah Tamu"
-            value={quantity}
-            onChange={(e) => setPost({ ...post, quantity: e.target.value })}
-            className={`w-full px-3 py-2 border rounded-md bg-white ${
-              inView7 ? "animate-fade-in-up delay-500" : "opacity-0"
-            }`}
-          />
-          <textarea
             type="text"
             placeholder="Pesan"
             value={address}
@@ -82,9 +72,7 @@ const RSVPSection = ({
             className={`w-full px-3 py-2 border rounded-md bg-white ${
               inView7 ? "animate-fade-in-up delay-600" : "opacity-0"
             }`}
-            rows="3"
-          ></textarea>
-
+          />
           {/* Tombol Hadir/Tidak Hadir */}
           <div
             className={`flex gap-2 ${
@@ -114,7 +102,17 @@ const RSVPSection = ({
               Tidak Hadir
             </button>
           </div>
-
+          {presence && (
+            <input
+              type="number"
+              placeholder="Jumlah Tamu"
+              value={quantity}
+              onChange={(e) => setPost({ ...post, quantity: e.target.value })}
+              className={`w-full px-3 py-2 border rounded-md bg-white ${
+                inView7 ? "animate-fade-in-up delay-500" : "opacity-0"
+              }`}
+            />
+          )}
           {/* Tombol Kirim */}
           <button
             type="submit"

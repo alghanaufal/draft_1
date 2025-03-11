@@ -11,18 +11,27 @@ const CoupleSection = ({
 }) => {
   return (
     <div
-      className="flex flex-col items-center justify-center text-center p-8 relative"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="bg-orange-200 flex flex-col items-center justify-center text-center p-8 relative"
+      // style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Gambar dengan border lingkaran */}
       <h3
         ref={ref2}
-        className={`text-xl font-serif font-bold mb-4 ${
+        className={`text-2xl md:text-4xl font-serif font-bold mb-4 ${
           inView2 ? "animate-fade-in-up" : "opacity-0"
         }`}
       >
-        Salam
+        Assalamu'alaikum Wr. Wb.
       </h3>
+      <p
+        ref={ref2}
+        className={`text-xs font-serif mb-4 ${
+          inView2 ? "animate-fade-in-up" : "opacity-0"
+        }`}
+      >
+        Dengan segala kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk
+        menghadiri pernikahan kami.
+      </p>
       <div className="mb-12" ref={ref3}>
         <div className="flex justify-center items-center">
           <div
@@ -38,20 +47,20 @@ const CoupleSection = ({
           </div>
         </div>
         <div className="p-6">
-          <p
-            className={`text-gray-700 leading-tight mb-4 ${
-              inView3 ? "animate-fade-in-up" : "opacity-0"
-            }`}
-          >
-            Lorem ipsum dolor, sit amet consectetur adipisicing.
-          </p>
           <h2
             className={`text-2xl font-bold text-gray-800 mb-2 ${
               inView3 ? "animate-letter-spacing" : "opacity-0"
             }`}
           >
-            Lorem, ipsum.
+            Nofridho Aulya, S.sos
           </h2>
+          <p
+            className={`text-gray-700 leading-tight mb-4 ${
+              inView3 ? "animate-fade-in-up" : "opacity-0"
+            }`}
+          >
+            Putra ke 2 dari Bapak Aung & Ibu Baiyar
+          </p>
           <section className="flex justify-center items-center">
             <button
               href="/"
@@ -91,20 +100,20 @@ const CoupleSection = ({
           </div>
         </div>
         <div className="p-6">
-          <p
-            className={`text-gray-700 leading-tight mb-4 ${
-              inView4 ? "animate-fade-in-up" : "opacity-0"
-            }`}
-          >
-            Lorem ipsum dolor, sit amet consectetur adipisicing.
-          </p>
           <h2
             className={`text-2xl font-bold text-gray-800 mb-2 ${
               inView4 ? "animate-letter-spacing" : "opacity-0"
             }`}
           >
-            Lorem, ipsum.
+            Rohadatul Nadya Maurani, S.Si
           </h2>
+          <p
+            className={`text-gray-700 leading-tight mb-4 ${
+              inView4 ? "animate-fade-in-up" : "opacity-0"
+            }`}
+          >
+            Putri ke 1 dari Bapak Rasul Hamidi & Ibu Jasmaniar
+          </p>
           <section className="flex justify-center items-center">
             <button
               href="/"

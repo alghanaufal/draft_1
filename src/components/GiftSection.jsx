@@ -10,17 +10,24 @@ const GiftSection = ({ ref8, inView8, bgImage }) => {
   return (
     <div
       ref={ref8} // Gunakan ref8 untuk memantau container
-      className="flex flex-col items-center p-12"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="bg-orange-200 flex flex-col items-center p-12"
+      // style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Judul */}
       <h2
-        className={`text-2xl md:text-4xl font-serif font-bold drop-shadow-lg mb-20 ${
+        className={`text-2xl md:text-4xl font-serif font-bold drop-shadow-lg mb-2 ${
           inView8 ? "animate-fade-in-up" : "opacity-0"
         }`}
       >
-        Wedding Day
+        Wedding Gift
       </h2>
+      <p
+        className={`text-xs font-serif mb-22 ${
+          inView8 ? "animate-fade-in-up" : "opacity-0"
+        }`}
+      >
+        Klik Gift
+      </p>
 
       {/* Card */}
       <div className="card">
@@ -47,13 +54,21 @@ const GiftSection = ({ ref8, inView8, bgImage }) => {
           </div>
 
           {/* Seal Button */}
+          {/* Seal Button */}
           <button
             onClick={handleToggle}
-            className={`seal bg-rose-300 text-rose-500 w-10 aspect-square rounded-full z-40 text-[10px] flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] border-4 border-rose-400 transition-all duration-1000 ${
+            className={`seal bg-rose-300 text-rose-500 w-14 aspect-square rounded-full z-40 flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] border-4 border-rose-400 transition-all duration-1000 ${
               isOpen ? "translate-y-3" : ""
             } ${inView8 ? "animate-fade-in-up delay-300" : "opacity-0"}`}
           >
-            Gift
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6" // Sesuaikan ukuran dengan kebutuhan
+            >
+              <path d="M9.375 3a1.875 1.875 0 000 3.75h1.875v4.5H3.375A1.875 1.875 0 011.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0112 2.753a3.375 3.375 0 015.432 3.997h3.193c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 10-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3zM11.25 12.75H3v6.75a1.875 1.875 0 001.875 1.875h5.625V12.75zm1.5 0v8.625h5.625a1.875 1.875 0 001.875-1.875V12.75h-7.5z" />
+            </svg>
           </button>
 
           {/* Top Triangle */}
