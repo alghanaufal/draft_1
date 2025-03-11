@@ -83,6 +83,10 @@ export default function App() {
   const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.1 });
   const { ref: ref4, inView: inView4 } = useInView({ threshold: 0.1 });
   const { ref: ref5, inView: inView5 } = useInView({ threshold: 0.1 });
+  const { ref: ref6, inView: inView6 } = useInView({ threshold: 0.1 });
+  const { ref: ref7, inView: inView7 } = useInView({ threshold: 0.1 });
+  const { ref: ref8, inView: inView8 } = useInView({ threshold: 0.1 });
+  const { ref: ref9, inView: inView9 } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -350,10 +354,21 @@ export default function App() {
               style={{ backgroundImage: `url(${bgfull})` }}
             >
               {/* Gambar dengan border lingkaran */}
-              <h3 className="text-xl font-serif font-bold mb-4">Salam</h3>
-              <div className="mb-12">
+              <h3
+                ref={ref2}
+                className={`text-xl font-serif font-bold mb-4 ${
+                  inView2 ? "animate-fade-in-up" : "opacity-0"
+                }`}
+              >
+                Salam
+              </h3>
+              <div className="mb-12" ref={ref3}>
                 <div className="flex justify-center items-center">
-                  <div className="w-40 h-60 border border-white rounded-full overflow-hidden relative">
+                  <div
+                    className={`w-40 h-60 border border-white rounded-full overflow-hidden relative ${
+                      inView3 ? "animate-zoom-in" : "opacity-0"
+                    }`}
+                  >
                     <img
                       src="/1.jpeg"
                       alt="Nofridho & Nadya"
@@ -362,10 +377,18 @@ export default function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-700 leading-tight mb-4">
+                  <p
+                    className={`text-gray-700 leading-tight mb-4 ${
+                      inView3 ? "animate-fade-in-up" : "opacity-0"
+                    }`}
+                  >
                     Lorem ipsum dolor, sit amet consectetur adipisicing.
                   </p>
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                  <h2
+                    className={`text-2xl font-bold text-gray-800 mb-2 ${
+                      inView3 ? "animate-letter-spacing" : "opacity-0"
+                    }`}
+                  >
                     Lorem, ipsum.
                   </h2>
                   <section className="flex justify-center items-center">
@@ -393,8 +416,12 @@ export default function App() {
                 </div>
               </div>
               <div className="mb-12">
-                <div className="flex justify-center items-center">
-                  <div className="w-40 h-60 border border-white rounded-full overflow-hidden relative">
+                <div className="flex justify-center items-center" ref={ref4}>
+                  <div
+                    className={`w-40 h-60 border border-white rounded-full overflow-hidden relative ${
+                      inView4 ? "animate-zoom-in" : "opacity-0"
+                    }`}
+                  >
                     <img
                       src="/1.jpeg"
                       alt="Nofridho & Nadya"
@@ -403,10 +430,18 @@ export default function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-700 leading-tight mb-4">
+                  <p
+                    className={`text-gray-700 leading-tight mb-4 ${
+                      inView4 ? "animate-fade-in-up" : "opacity-0"
+                    }`}
+                  >
                     Lorem ipsum dolor, sit amet consectetur adipisicing.
                   </p>
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                  <h2
+                    className={`text-2xl font-bold text-gray-800 mb-2 ${
+                      inView4 ? "animate-letter-spacing" : "opacity-0"
+                    }`}
+                  >
                     Lorem, ipsum.
                   </h2>
                   <section className="flex justify-center items-center">
@@ -437,18 +472,31 @@ export default function App() {
 
             {/* Countdown */}
             <div
+              ref={ref5}
               className="pb-12 text-center"
               style={{ backgroundImage: `url(${bgfull2})` }}
             >
-              <h2 className="text-2xl md:text-4xl font-serif font-bold drop-shadow-lg">
+              <h2
+                className={`text-2xl md:text-4xl font-serif font-bold drop-shadow-lg ${
+                  inView5 ? "animate-fade-in-up" : "opacity-0"
+                }`}
+              >
                 Wedding Day
               </h2>
-              <p className="text-sm md:text-lg font-serif font-light mt-1 tracking-wide drop-shadow-md">
+              <p
+                className={`text-sm md:text-lg font-serif font-light mt-1 tracking-wide drop-shadow-md ${
+                  inView5 ? "animate-fade-in-up delay-100" : "opacity-0"
+                }`}
+              >
                 03.05.2025
               </p>
 
               <div className="grid grid-cols-4 gap-2 md:gap-4 mt-6 justify-center">
-                <div className="px-3 py-2 md:px-6 md:py-3 rounded-md text-center">
+                <div
+                  className={`px-3 py-2 md:px-6 md:py-3 rounded-md text-center ${
+                    inView5 ? "animate-fade-in-up delay-200" : "opacity-0"
+                  }`}
+                >
                   <span className="text-xl md:text-3xl font-bold drop-shadow-lg">
                     {timeLeft.days}
                   </span>
@@ -456,7 +504,11 @@ export default function App() {
                     Days
                   </p>
                 </div>
-                <div className="px-3 py-2 md:px-6 md:py-3 rounded-md text-center">
+                <div
+                  className={`px-3 py-2 md:px-6 md:py-3 rounded-md text-center ${
+                    inView5 ? "animate-fade-in-up delay-300" : "opacity-0"
+                  }`}
+                >
                   <span className="text-xl md:text-3xl font-bold drop-shadow-lg">
                     {timeLeft.hours}
                   </span>
@@ -464,7 +516,11 @@ export default function App() {
                     Hours
                   </p>
                 </div>
-                <div className="px-3 py-2 md:px-6 md:py-3 rounded-md text-center">
+                <div
+                  className={`px-3 py-2 md:px-6 md:py-3 rounded-md text-center ${
+                    inView5 ? "animate-fade-in-up delay-300" : "opacity-0"
+                  }`}
+                >
                   <span className="text-xl md:text-3xl font-bold drop-shadow-lg">
                     {timeLeft.minutes}
                   </span>
@@ -472,7 +528,11 @@ export default function App() {
                     Minutes
                   </p>
                 </div>
-                <div className="px-3 py-2 md:px-6 md:py-3 rounded-md text-center">
+                <div
+                  className={`px-3 py-2 md:px-6 md:py-3 rounded-md text-center ${
+                    inView5 ? "animate-fade-in-up delay-300" : "opacity-0"
+                  }`}
+                >
                   <span className="text-xl md:text-3xl font-bold drop-shadow-lg">
                     {timeLeft.seconds}
                   </span>
@@ -485,10 +545,16 @@ export default function App() {
 
             {/* Detail Acara */}
             <div
+              ref={ref6} // Gunakan ref6 untuk memantau container
               className="flex flex-col items-center p-12"
               style={{ backgroundImage: `url(${bgfull})` }}
             >
-              <div className="w-full max-w-md bg-white rounded-t-full shadow-lg relative text-center p-28">
+              {/* Bagian Akad Nikah */}
+              <div
+                className={`w-full max-w-md bg-white rounded-t-full shadow-lg relative text-center p-28 ${
+                  inView6 ? "animate-fade-in-up" : "opacity-0"
+                }`}
+              >
                 <h2 className="text-lg font-serif font-semibold mt-2">
                   AKAD NIKAH
                 </h2>
@@ -498,19 +564,22 @@ export default function App() {
                 <p className="text-gray-600">07.00 WIB - Selesai</p>
                 {/* Lokasi Map */}
                 <div className="mt-4 w-full flex justify-center">
-                  {/* <iframe
-                    className="w-60 h-40 rounded-lg shadow-md"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.671825365702!2d110.37881347413379!3d-7.821435277047214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57910b3c5d75%3A0xdeb4377e2d70c6d5!2sGrand%20Ballroom%20Hotel%20Santika!5e0!3m2!1sen!2sid!4v1618911111812!5m2!1sen!2sid"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe> */}
-                  <button className="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition">
+                  <button
+                    className={`bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition ${
+                      inView6 ? "animate-fade-in-up delay-100" : "opacity-0"
+                    }`}
+                  >
                     Lokasi
                   </button>
                 </div>
               </div>
 
-              <div className="w-full max-w-md bg-white rounded-b-full shadow-lg relative text-center px-6 p-28">
+              {/* Bagian Resepsi Nikah */}
+              <div
+                className={`w-full max-w-md bg-white rounded-b-full shadow-lg relative text-center px-6 p-28 ${
+                  inView6 ? "animate-fade-in-up delay-200" : "opacity-0"
+                }`}
+              >
                 <h2 className="text-lg font-serif font-semibold mt-2">
                   RESEPSI NIKAH
                 </h2>
@@ -520,15 +589,10 @@ export default function App() {
                 <p className="text-gray-600">07.00 WIB - Selesai</p>
                 {/* Lokasi Map */}
                 <div className="mt-4 w-full flex justify-center">
-                  {/* <iframe
-                    className="w-60 h-40 rounded-lg shadow-md"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.671825365702!2d110.37881347413379!3d-7.821435277047214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57910b3c5d75%3A0xdeb4377e2d70c6d5!2sGrand%20Ballroom%20Hotel%20Santika!5e0!3m2!1sen!2sid!4v1618911111812!5m2!1sen!2sid"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe> */}
                   <button
-                    // onClick={handleScroll}
-                    className="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition"
+                    className={`bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition ${
+                      inView6 ? "animate-fade-in-up delay-300" : "opacity-0"
+                    }`}
                   >
                     Lokasi
                   </button>
@@ -538,17 +602,37 @@ export default function App() {
 
             {/* RSVP Form */}
             <div
+              ref={ref7} // Gunakan ref7 untuk memantau container
               className="flex justify-center items-center min-h-screen"
               style={{ backgroundImage: `url(${bgfull2})` }}
             >
-              <div className="p-6 rounded-lg shadow-lg max-w-md w-full text-center border border-gray-300">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-700">
+              <div
+                className={`p-6 rounded-lg shadow-lg max-w-md w-full text-center border border-gray-300 ${
+                  inView7 ? "animate-fade-in-up" : "opacity-0"
+                }`}
+              >
+                {/* Judul */}
+                <h2
+                  className={`text-2xl font-semibold mb-4 text-gray-700 ${
+                    inView7 ? "animate-fade-in-up delay-100" : "opacity-0"
+                  }`}
+                >
                   Wishes
                 </h2>
-                <p className="text-gray-600">
+                <p
+                  className={`text-gray-600 ${
+                    inView7 ? "animate-fade-in-up delay-200" : "opacity-0"
+                  }`}
+                >
                   Berikan ucapan harapan dan doa kepada kedua mempelai
                 </p>
-                <div className="flex justify-center gap-4 my-4">
+
+                {/* Statistik Hadir/Tidak Hadir */}
+                <div
+                  className={`flex justify-center gap-4 my-4 ${
+                    inView7 ? "animate-fade-in-up delay-300" : "opacity-0"
+                  }`}
+                >
                   <div className="bg-green-300 px-4 py-2 rounded text-white font-semibold">
                     ✅ {attending} Hadir
                   </div>
@@ -557,13 +641,16 @@ export default function App() {
                   </div>
                 </div>
 
+                {/* Formulir */}
                 <form className="space-y-3">
                   <input
                     type="text"
                     placeholder="Nama"
                     value={name}
                     onChange={(e) => setPost({ ...post, name: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-md bg-white"
+                    className={`w-full px-3 py-2 border rounded-md bg-white ${
+                      inView7 ? "animate-fade-in-up delay-400" : "opacity-0"
+                    }`}
                   />
                   <input
                     type="number"
@@ -572,7 +659,9 @@ export default function App() {
                     onChange={(e) =>
                       setPost({ ...post, quantity: e.target.value })
                     }
-                    className="w-full px-3 py-2 border rounded-md bg-white"
+                    className={`w-full px-3 py-2 border rounded-md bg-white ${
+                      inView7 ? "animate-fade-in-up delay-500" : "opacity-0"
+                    }`}
                   />
                   <textarea
                     type="text"
@@ -581,10 +670,18 @@ export default function App() {
                     onChange={(e) =>
                       setPost({ ...post, address: e.target.value })
                     }
-                    className="w-full px-3 py-2 border rounded-md bg-white"
+                    className={`w-full px-3 py-2 border rounded-md bg-white ${
+                      inView7 ? "animate-fade-in-up delay-600" : "opacity-0"
+                    }`}
                     rows="3"
                   ></textarea>
-                  <div className="flex gap-2">
+
+                  {/* Tombol Hadir/Tidak Hadir */}
+                  <div
+                    className={`flex gap-2 ${
+                      inView7 ? "animate-fade-in-up delay-700" : "opacity-0"
+                    }`}
+                  >
                     <button
                       type="button"
                       onClick={() => setPost({ ...post, presence: true })}
@@ -609,16 +706,24 @@ export default function App() {
                     </button>
                   </div>
 
+                  {/* Tombol Kirim */}
                   <button
                     type="submit"
-                    className="w-full bg-yellow-500 py-2 rounded-md font-semibold text-white"
+                    className={`w-full bg-yellow-500 py-2 rounded-md font-semibold text-white ${
+                      inView7 ? "animate-fade-in-up delay-800" : "opacity-0"
+                    }`}
                     onClick={createPost}
                   >
                     Kirim
                   </button>
                 </form>
 
-                <div className="mt-6 text-left">
+                {/* Daftar Komentar */}
+                <div
+                  className={`mt-6 text-left ${
+                    inView7 ? "animate-fade-in-up delay-900" : "opacity-0"
+                  }`}
+                >
                   <h3 className="font-semibold mb-2 text-gray-700">
                     Komentar:
                   </h3>
@@ -644,17 +749,25 @@ export default function App() {
 
             {/* Gift Section */}
             <div
+              ref={ref8} // Gunakan ref8 untuk memantau container
               className="flex flex-col items-center p-12"
               style={{ backgroundImage: `url(${bgfull})` }}
             >
-              <h2 className="text-2xl md:text-4xl font-serif font-bold drop-shadow-lg mb-20">
+              {/* Judul */}
+              <h2
+                className={`text-2xl md:text-4xl font-serif font-bold drop-shadow-lg mb-20 ${
+                  inView8 ? "animate-fade-in-up" : "opacity-0"
+                }`}
+              >
                 Wedding Day
               </h2>
+
+              {/* Card */}
               <div className="card">
                 <div
                   className={`relative bg-black w-[300px] sm:w-[350px] transition-all duration-700 aspect-video flex items-center justify-center ${
                     isOpen ? "group" : ""
-                  }`}
+                  } ${inView8 ? "animate-zoom-in" : "opacity-0"}`}
                 >
                   {/* Card Content */}
                   <div
@@ -678,6 +791,8 @@ export default function App() {
                     onClick={handleToggle}
                     className={`seal bg-rose-300 text-rose-500 w-10 aspect-square rounded-full z-40 text-[10px] flex items-center justify-center font-semibold [clip-path:polygon(50%_0%,_80%_10%,_100%_35%,_100%_70%,_80%_90%,_50%_100%,_20%_90%,_0%_70%,_0%_35%,_20%_10%)] border-4 border-rose-400 transition-all duration-1000 ${
                       isOpen ? "translate-y-3" : ""
+                    } ${
+                      inView8 ? "animate-fade-in-up delay-300" : "opacity-0"
                     }`}
                   >
                     Gift
@@ -691,6 +806,8 @@ export default function App() {
                       isOpen
                         ? "[clip-path:polygon(50%_0%,_100%_0,_0_0)]"
                         : "[clip-path:polygon(50%_50%,_100%_0,_0_0)]"
+                    } ${
+                      inView8 ? "animate-fade-in-up delay-400" : "opacity-0"
                     }`}
                   ></div>
 
@@ -698,6 +815,8 @@ export default function App() {
                   <div
                     className={`lft transition-all duration-700 absolute w-full h-full bg-orange-400 [clip-path:polygon(50%_50%,_0_0,_0_100%)] ${
                       isOpen ? "[clip-path:polygon(50%_0%,_0_0,_0_100%)]" : ""
+                    } ${
+                      inView8 ? "animate-fade-in-up delay-500" : "opacity-0"
                     }`}
                   ></div>
 
@@ -707,6 +826,8 @@ export default function App() {
                       isOpen
                         ? "[clip-path:polygon(50%_0%,_100%_0,_100%_100%)]"
                         : ""
+                    } ${
+                      inView8 ? "animate-fade-in-up delay-600" : "opacity-0"
                     }`}
                   ></div>
 
@@ -716,11 +837,14 @@ export default function App() {
                       isOpen
                         ? "[clip-path:polygon(50%_0%,_100%_100%,_0_100%)]"
                         : ""
+                    } ${
+                      inView8 ? "animate-fade-in-up delay-700" : "opacity-0"
                     }`}
                   ></div>
                 </div>
               </div>
             </div>
+
             {/* Galeri Foto */}
             <div
               className="p-10"
@@ -728,8 +852,8 @@ export default function App() {
             >
               <h3 className="text-xl font-serif font-bold mb-4">Galeri Kami</h3>
               <div
-                ref={ref5} // Ref untuk Intersection Observer
-                className={`gallery ${inView5 ? "gallery-animate" : ""}`} // Tambahkan class animasi saat inView true
+                ref={ref9} // Ref untuk Intersection Observer
+                className={`gallery ${inView9 ? "gallery-animate" : ""}`} // Tambahkan class animasi saat inView true
               >
                 {images.map((img, index) => (
                   <div key={index} className="gallery-item">
