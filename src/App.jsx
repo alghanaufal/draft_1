@@ -181,6 +181,29 @@ export default function App() {
     setIsModalOpen(!isModalOpen); // Toggle modal
   };
 
+  const [guestName, setGuestName] = useState("Tamu Undangan"); // State untuk nama tamu
+
+  useEffect(() => {
+    // Ambil query string dari URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const to = urlParams.get("to"); // Ambil parameter `to`
+
+    // Jika ada parameter `to`, ambil data dari API
+    if (to) {
+      fetch(`https://draft-1-kappa.vercel.app/api/guest?to=${to}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.name) {
+            setGuestName(data.name); // Set nama tamu dari API
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching guest data:", error);
+        });
+    }
+  }, []); // Jalankan efek ini sekali saat komponen dimount
+
   return (
     <div
       className="relative min-h-screen bg-fixed bg-cover bg-center flex flex-col"
@@ -284,7 +307,7 @@ export default function App() {
               >
                 Kepada Yth.
                 <br />
-                <span className="font-semibold font-serif">Tamu Undangan</span>
+                <span className="font-semibold font-serif">{guestName}</span>
               </p>
               <p
                 className="text-sm text-gray-500 mb-6 mx-2 animate-fade-in-up"
