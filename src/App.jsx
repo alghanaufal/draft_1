@@ -92,20 +92,20 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (!isScrollAllowed) {
-      // Blokir scroll
-      document.body.classList.add("no-scroll");
-    } else {
-      // Izinkan scroll
-      document.body.classList.remove("no-scroll");
-    }
+  // useEffect(() => {
+  //   if (!isScrollAllowed) {
+  //     // Blokir scroll
+  //     document.body.classList.add("no-scroll");
+  //   } else {
+  //     // Izinkan scroll
+  //     document.body.classList.remove("no-scroll");
+  //   }
 
-    // Bersihkan event listener saat komponen di-unmount
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
-  }, [isScrollAllowed]);
+  //   // Bersihkan event listener saat komponen di-unmount
+  //   return () => {
+  //     document.body.classList.remove("no-scroll");
+  //   };
+  // }, [isScrollAllowed]);
 
   useEffect(() => {
     const countdown = setInterval(() => {
@@ -244,49 +244,60 @@ export default function App() {
         {/* Konten */}
         <div className="relative flex-grow">
           {/* Bagian Landing */}
-          <div
-            className="bg-cover bg-center h-screen flex p-8 w-full relative"
-            // style={{ backgroundImage: `url(${bgImage})` }}
-          >
-            {/* Background Transparan dengan Animasi Fade-In */}
+          <div className="bg-cover bg-center h-screen flex p-8 w-full relative">
             <div
-              className="rounded-3xl bg-white bg-opacity-50 flex flex-col items-center justify-center text-center animate-fade-in"
-              style={{ backgroundColor: "rgba(255, 255, 255, 0.5)" }}
+              className="rounded-3xl border-4 border-white shadow-lg flex flex-col items-center justify-center text-center animate-fade-in"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+                boxShadow: "0 0 10px #FF8C00, 0 0 30px #FFD700",
+              }}
             >
-              {/* Foto Chibi dengan Animasi Fade-In */}
-              <div className="w-80 max-w-md bg-white rounded-t-full shadow-lg relative text-center">
+              <div
+                className="w-70 max-w-md bg-white rounded-t-full shadow-lg relative text-center"
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                  boxShadow: "0 0 10px #FF8C00, 0 0 30px #FFD700",
+                }}
+              >
                 <img
                   src="/chibi.PNG"
                   alt="Nofridho & Nadya"
-                  className="w-full h-full object-cover animate-zoomin-f"
+                  className="w-60 h-full object-cover animate-pull-in block mx-auto"
                 />
               </div>
-              <h2 className="text-sm text-gray-500 m-2">THE WEDDING OF</h2>
-              <h1 className="text-5xl font-serif font-bold mb-4">
-                NOFRIDHO & NADYA
+              <h2 className="text-sm text-gray-500 m-2 animate-fade-in-up">
+                THE WEDDING OF
+              </h2>
+              <h1 className="text-5xl font-serif font-bold mb-4 animate-fade-in-scale animate-letter-spacing">
+                NOFRIDHO <br />&<br /> NADYA
               </h1>
-              <p className="text-gray-600 mb-4">
+              <p
+                className="text-gray-600 mb-4 animate-fade-in-up"
+                style={{ animationDelay: "0.4s" }}
+              >
                 Kepada Yth.
                 <br />
                 <span className="font-semibold font-serif">Tamu Undangan</span>
               </p>
-              <p className="text-sm text-gray-500 mb-6">
+              <p
+                className="text-sm text-gray-500 mb-6 mx-2 animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
                 Dengan hormat, kami mengundang Anda untuk menghadiri pernikahan
                 kami.
               </p>
               <button
                 onClick={handleScroll}
-                className="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition"
+                className="bg-white text-gray-800 px-6 py-2 rounded-full hover:bg-gray-300 transition animate-fade-in-up"
+                style={{ animationDelay: "0.8s" }}
               >
                 Buka Undangan
               </button>
             </div>
-
-            {/* Foto Rumah Gadang dengan Animasi Fade-Out */}
             <img
-              src="/rumahgadang.png"
+              src="/rumahgadang2.png"
               alt="Nofridho & Nadya"
-              className="w-100 h-58 absolute -bottom-18 left-1/2 transform -translate-x-1/2 animate-zoomin-f"
+              className="w-100 h-58 absolute -bottom-16 left-1/2 transform -translate-x-1/2 animate-zoom-in"
             />
           </div>
 
@@ -305,14 +316,25 @@ export default function App() {
                     alt="Mountain"
                     class="w-full h-144 object-cover"
                   />
-                  <div class="p-6">
-                    <p class="text-gray-700 leading-tight mb-4">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aliquam eu sapien porttitor, blandit velit ac, vehicula
-                      elit. Nunc et ex at turpis rutrum viverra.
+                  <div class="p-6" ref={ref}>
+                    <p
+                      class={`text-gray-700 text-justify leading-tight mb-4 ${
+                        inView ? "animate-fade-in-scale" : ""
+                      }`}
+                    >
+                      "Dan di antara tanda tanda (kebesaran) Nya ialah dia
+                      menciptakan pasangan-pasangan untukmu dari jenismu
+                      sendiri, agar kamu cenderung dan merasa tentram kepadanya,
+                      dan dia menjadikan di antara mu rasa kasih dan sayang.
+                      Sungguh, pada yang demikian itu benar benar terdapat tanda
+                      tanda (kebesaran Allah) bagi kaum yg berpikir"
                     </p>
-                    <h2 class="text-2xl font-bold text-gray-800 mb-2">
-                      Lorem, ipsum.
+                    <h2
+                      class={`text-2xl font-bold text-gray-800 mb-2 ${
+                        inView ? "animate-fade-in-scale" : ""
+                      }`}
+                    >
+                      Ar Rum ayat 21
                     </h2>
                   </div>
                 </div>
