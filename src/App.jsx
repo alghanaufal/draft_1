@@ -305,22 +305,22 @@ export default function App() {
           <div ref={inviteSectionRef} className="mb-12 text-center">
             {/* Bagian Ucapan */}
             <div
-              className="h-screen flex flex-col items-center justify-center text-center px-8 py-52 relative"
+              className="h-screen flex flex-col items-center justify-center text-center p-8 relative"
               style={{ backgroundImage: `url(${bgfull2})` }}
             >
               {/* Gambar dengan border lingkaran */}
-              <div class="flex flex-col justify-center items-center min-h-screen">
+              <div class="flex flex-col justify-center items-center m-6">
                 <div class="bg-white rounded-3xl shadow-lg overflow-hidden max-w-lg w-full">
                   <img
                     src="/1.jpeg"
                     alt="Mountain"
                     class="w-full h-144 object-cover"
                   />
-                  <div class="p-6" ref={ref}>
+                  <div class="p-6">
                     <p
                       ref={ref}
                       class={`text-gray-700 text-justify leading-tight mb-4 ${
-                        inView ? "gallery-animate" : ""
+                        inView ? "animate-fade-in-scale" : ""
                       }`}
                     >
                       "Dan di antara tanda tanda (kebesaran) Nya ialah dia
@@ -333,7 +333,7 @@ export default function App() {
                     <h2
                       ref={ref}
                       class={`text-2xl font-bold text-gray-800 mb-2 ${
-                        inView ? "gallery-animate" : ""
+                        inView ? "animate-fade-in-scale" : ""
                       }`}
                     >
                       Ar Rum ayat 21
