@@ -316,7 +316,7 @@ export default function App() {
                     alt="Mountain"
                     class="w-full h-100 object-cover"
                   />
-                  <div class="p-6">
+                  <div class="p-6" ref={ref}>
                     <p
                       ref={ref}
                       class={`text-gray-700 text-justify leading-tight mb-4 ${
