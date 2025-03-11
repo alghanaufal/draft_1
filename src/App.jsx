@@ -314,13 +314,12 @@ export default function App() {
                   <img
                     src="/1.jpeg"
                     alt="Mountain"
-                    class="w-full h-100 object-cover"
+                    className="w-full h-100 object-cover"
                   />
-                  <div class="p-6" ref={ref}>
+                  <div className="p-6" ref={ref}>
                     <p
-                      ref={ref}
-                      class={`text-gray-700 text-justify leading-tight mb-4 ${
-                        inView ? "animate-fade-in-scale" : ""
+                      className={`text-gray-700 text-justify leading-tight mb-4 ${
+                        inView ? "animate-fade-in-scale" : "opacity-0"
                       }`}
                     >
                       "Dan di antara tanda tanda (kebesaran) Nya ialah dia
@@ -331,9 +330,8 @@ export default function App() {
                       tanda (kebesaran Allah) bagi kaum yg berpikir"
                     </p>
                     <h2
-                      ref={ref}
-                      class={`text-2xl font-bold text-gray-800 mb-2 ${
-                        inView ? "animate-fade-in-scale" : ""
+                      className={`text-2xl font-bold text-gray-800 mb-2 ${
+                        inView ? "animate-fade-in-scale" : "opacity-0"
                       }`}
                     >
                       Ar Rum ayat 21
