@@ -189,18 +189,9 @@ export default function App() {
     const urlParams = new URLSearchParams(queryString);
     const to = urlParams.get("to"); // Ambil parameter `to`
 
-    // Jika ada parameter `to`, ambil data dari API
+    // Jika ada parameter `to`, set nama tamu
     if (to) {
-      fetch(`https://draft-1-kappa.vercel.app/api/guest?to=${to}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.name) {
-            setGuestName(data.name); // Set nama tamu dari API
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching guest data:", error);
-        });
+      setGuestName(to); // Langsung gunakan nilai dari parameter `to`
     }
   }, []); // Jalankan efek ini sekali saat komponen dimount
 
