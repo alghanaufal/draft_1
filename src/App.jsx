@@ -320,7 +320,7 @@ export default function App() {
                     <p
                       ref={ref}
                       class={`text-gray-700 text-justify leading-tight mb-4 ${
-                        inView ? "animate-fade-in-scale" : ""
+                        inView ? "gallery-animate" : ""
                       }`}
                     >
                       "Dan di antara tanda tanda (kebesaran) Nya ialah dia
@@ -333,7 +333,7 @@ export default function App() {
                     <h2
                       ref={ref}
                       class={`text-2xl font-bold text-gray-800 mb-2 ${
-                        inView ? "animate-fade-in-scale" : ""
+                        inView ? "gallery-animate" : ""
                       }`}
                     >
                       Ar Rum ayat 21
