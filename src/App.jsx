@@ -111,16 +111,16 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   if (!isScrollAllowed) {
-  //     document.body.classList.add("no-scroll");
-  //   } else {
-  //     document.body.classList.remove("no-scroll");
-  //   }
-  //   return () => {
-  //     document.body.classList.remove("no-scroll");
-  //   };
-  // }, [isScrollAllowed]);
+  useEffect(() => {
+    if (!isScrollAllowed) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isScrollAllowed]);
 
   useEffect(() => {
     const countdown = setInterval(() => {
