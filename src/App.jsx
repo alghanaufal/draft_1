@@ -305,7 +305,7 @@ export default function App() {
           <div ref={inviteSectionRef} className="mb-12 text-center">
             {/* Bagian Ucapan */}
             <div
-              className="h-screen flex flex-col items-center justify-center text-center p-8 relative"
+              className="h-screen flex flex-col items-center justify-center text-center px-8 py-52 relative"
               style={{ backgroundImage: `url(${bgfull2})` }}
             >
               {/* Gambar dengan border lingkaran */}
@@ -318,6 +318,7 @@ export default function App() {
                   />
                   <div class="p-6" ref={ref}>
                     <p
+                      ref={ref}
                       class={`text-gray-700 text-justify leading-tight mb-4 ${
                         inView ? "animate-fade-in-scale" : ""
                       }`}
@@ -330,6 +331,7 @@ export default function App() {
                       tanda (kebesaran Allah) bagi kaum yg berpikir"
                     </p>
                     <h2
+                      ref={ref}
                       class={`text-2xl font-bold text-gray-800 mb-2 ${
                         inView ? "animate-fade-in-scale" : ""
                       }`}
