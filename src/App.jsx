@@ -77,9 +77,12 @@ export default function App() {
   const attending = posts.filter((post) => post.presence === true).length;
   const notAttending = posts.filter((post) => post.presence === false).length;
 
-  const { ref, inView } = useInView({
-    threshold: 0.1, // Pemicu saat 10% elemen terlihat
-  });
+  // Gunakan useInView untuk setiap bagian yang ingin dianimasikan
+  const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.1 });
+  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.1 });
+  const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.1 });
+  const { ref: ref4, inView: inView4 } = useInView({ threshold: 0.1 });
+  const { ref: ref5, inView: inView5 } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -314,12 +317,12 @@ export default function App() {
                   <img
                     src="/1.jpeg"
                     alt="Mountain"
-                    className="w-full h-100 object-cover"
+                    class="w-full h-100 object-cover"
                   />
-                  <div className="p-6" ref={ref}>
+                  <div class="p-6" ref={ref1}>
                     <p
-                      className={`text-gray-700 text-justify leading-tight mb-4 ${
-                        inView ? "animate-fade-in-scale" : "opacity-0"
+                      class={`text-gray-700 text-justify leading-tight mb-4 ${
+                        inView1 ? "animate-fade-in-scale" : ""
                       }`}
                     >
                       "Dan di antara tanda tanda (kebesaran) Nya ialah dia
@@ -330,8 +333,8 @@ export default function App() {
                       tanda (kebesaran Allah) bagi kaum yg berpikir"
                     </p>
                     <h2
-                      className={`text-2xl font-bold text-gray-800 mb-2 ${
-                        inView ? "animate-fade-in-scale" : "opacity-0"
+                      class={`text-2xl font-bold text-gray-800 mb-2 ${
+                        inView1 ? "animate-fade-in-scale" : ""
                       }`}
                     >
                       Ar Rum ayat 21
@@ -725,8 +728,8 @@ export default function App() {
             >
               <h3 className="text-xl font-serif font-bold mb-4">Galeri Kami</h3>
               <div
-                ref={ref} // Ref untuk Intersection Observer
-                className={`gallery ${inView ? "gallery-animate" : ""}`} // Tambahkan class animasi saat inView true
+                ref={ref5} // Ref untuk Intersection Observer
+                className={`gallery ${inView5 ? "gallery-animate" : ""}`} // Tambahkan class animasi saat inView true
               >
                 {images.map((img, index) => (
                   <div key={index} className="gallery-item">
