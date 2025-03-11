@@ -309,12 +309,12 @@ export default function App() {
               style={{ backgroundImage: `url(${bgfull2})` }}
             >
               {/* Gambar dengan border lingkaran */}
-              <div class="flex flex-col justify-center items-center m-6">
+              <div class="flex flex-col justify-center items-center min-h-screen m-4">
                 <div class="bg-white rounded-3xl shadow-lg overflow-hidden max-w-lg w-full">
                   <img
                     src="/1.jpeg"
                     alt="Mountain"
-                    class="w-full h-144 object-cover"
+                    class="w-full h-100 object-cover"
                   />
                   <div class="p-6">
                     <p
