@@ -14,6 +14,27 @@ const CoupleSection = ({
       className="bg-orange-200 flex flex-col items-center justify-center text-center p-8 relative"
       // style={{ backgroundImage: `url(${bgImage})` }}
     >
+      <img
+        src="/bunga4.png"
+        alt="Bunga"
+        className={`absolute top-1 -left-12 w-24 h-24 transform -rotate-12 animate-sway ${
+          inView2 ? "opacity-100" : "opacity-0"
+        } transition-opacity duration-500`}
+      />
+      <img
+        src="/bunga4.png"
+        alt="Bunga"
+        className={`absolute top-1 -right-12 w-24 h-24 transform rotate-12 animate-sway ${
+          inView2 ? "opacity-100" : "opacity-0"
+        } transition-opacity duration-500`}
+      />
+      <img
+        src="/bunga6.png"
+        alt="Bunga"
+        className={`absolute -bottom-8 left-1/2 -translate-x-1/2 w-88 h-44 -rotate-12${
+          inView4 ? "animate-fade-in-up delay-600" : "opacity-0"
+        } transition-opacity duration-500`}
+      />
       {/* Gambar dengan border lingkaran */}
       <h3
         ref={ref2}

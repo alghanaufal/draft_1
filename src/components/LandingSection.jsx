@@ -32,7 +32,7 @@ const LandingSection = ({ guestName, handleScroll }) => {
         </h1>
         <p
           className="text-gray-600 mb-4 animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
+          style={{ animationDelay: "0.8s", zIndex: 100 }}
         >
           Kepada Yth.
           <br />

@@ -137,6 +137,22 @@ body.no-scroll {
   overflow: hidden;
 }
 
+@keyframes sway {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+}
+
 .wrapper .button {
   width: 70px;
   height: 70px;
