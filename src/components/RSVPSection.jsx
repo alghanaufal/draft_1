@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const RSVPSection = ({
   ref7,
@@ -12,6 +12,16 @@ const RSVPSection = ({
   bgImage,
 }) => {
   const { quantity, name, presence, address } = post;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(4); // Jumlah komentar per halaman
+
+  // Hitung indeks untuk pagination
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Fungsi untuk mengganti halaman
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div
       ref={ref7} // Gunakan ref7 untuk memantau container
@@ -132,8 +142,8 @@ const RSVPSection = ({
           }`}
         >
           <h3 className="font-semibold mb-2 text-gray-700">Komentar:</h3>
-          <div className="max-h-80 overflow-y-auto space-y-2">
-            {posts.map((post) => (
+          <div className="space-y-2 h-112 overflow-y-auto">
+            {currentPosts.map((post) => (
               <div
                 className="bg-white p-3 rounded-lg shadow border border-gray-300"
                 key={post.id}
@@ -148,6 +158,23 @@ const RSVPSection = ({
               </div>
             ))}
           </div>
+          <div className="flex justify-center mt-4">
+            {Array.from({
+              length: Math.ceil(posts.length / postsPerPage),
+            }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => paginate(index + 1)}
+                className={`mx-1 px-3 py-1 rounded-md ${
+                  currentPage === index + 1
+                    ? "bg-yellow-500 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -155,3 +182,25 @@ const RSVPSection = ({
 };
 
 export default RSVPSection;
+
+{
+  /* <h3 className="font-semibold mb-2 text-gray-700">Komentar:</h3> */
+}
+{
+  /* <div className="max-h-80 overflow-y-auto space-y-2">
+                {posts.map((post) => (
+                  <div
+                    className="bg-white p-3 rounded-lg shadow border border-gray-300"
+                    key={post.id}
+                  >
+                    <p className="font-semibold text-gray-700">
+                      {post.name} {post.presence ? "✅" : "❌"}
+                    </p>
+                    <p className="text-gray-600">{post.address}</p>
+                    <p className="text-gray-500 text-sm">
+                      {new Date(post.time).toLocaleString()}
+                    </p>
+                  </div>
+                ))}
+              </div> */
+}

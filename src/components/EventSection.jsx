@@ -68,14 +68,14 @@ const EventSection = ({ ref6, inView6, bgImage }) => {
         <img
           src="/bunga1.png"
           alt="Bunga"
-          className={`absolute -bottom-14 -left-2 w-54 h-54 transform rotate-34 scale-x-[-1] animate-sway ${
+          className={`absolute -bottom-14 -left-6 w-54 h-54 transform rotate-34 scale-x-[-1] animate-sway ${
             inView6 ? "animate-fade-in-up delay-200" : "opacity-0"
           } transition-opacity duration-500`}
         />
         <img
           src="/bunga1.png"
           alt="Bunga"
-          className={`absolute -bottom-14 -right-2 w-54 h-54 transform -rotate-34 animate-sway ${
+          className={`absolute -bottom-14 -right-6 w-54 h-54 transform -rotate-34 animate-sway ${
             inView6 ? "animate-fade-in-up delay-400" : "opacity-0"
           } transition-opacity duration-500`}
         />

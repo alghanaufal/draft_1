@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const GiftSection = ({ ref8, inView8, bgImage }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showText, setShowText] = useState(false);
+
+  useEffect(() => {
+    if (inView8) {
+      const textTimer = setTimeout(() => {
+        setShowText(true);
+        const hideTimer = setTimeout(() => {
+          setShowText(false);
+        }, 2500);
+        return () => clearTimeout(hideTimer);
+      }, 2000); // Delay 1 detik sebelum teks muncul
+      return () => clearTimeout(textTimer);
+    }
+  }, [inView8]);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -11,24 +25,16 @@ const GiftSection = ({ ref8, inView8, bgImage }) => {
     <div
       ref={ref8} // Gunakan ref8 untuk memantau container
       className="bg-orange-200 flex flex-col items-center p-12"
-      // style={{ backgroundImage: `url(${bgImage})` }}
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Judul */}
       <h2
-        className={`text-2xl md:text-4xl font-serif font-bold drop-shadow-lg mb-2 ${
+        className={`text-2xl md:text-4xl font-serif font-bold drop-shadow-lg mb-26 ${
           inView8 ? "animate-fade-in-up" : "opacity-0"
         }`}
       >
         Wedding Gift
       </h2>
-      <p
-        className={`text-xs font-serif mb-22 ${
-          inView8 ? "animate-fade-in-up" : "opacity-0"
-        }`}
-      >
-        Klik Gift
-      </p>
-
       {/* Card */}
       <div className="card">
         <div
@@ -39,7 +45,7 @@ const GiftSection = ({ ref8, inView8, bgImage }) => {
           {/* Card Content */}
           <div
             className={`transition-all flex flex-col items-center py-5 justify-start duration-80 ${
-              isOpen ? "-translate-y-16 duration-1000" : ""
+              isOpen ? "-translate-y-22 duration-1000" : ""
             } bg-white w-full h-full absolute`}
           >
             <p className="text-xl sm:text-2xl font-semibold text-gray-500 font-serif">
@@ -53,7 +59,11 @@ const GiftSection = ({ ref8, inView8, bgImage }) => {
             </p>
           </div>
 
-          {/* Seal Button */}
+          {showText && (
+            <span className="absolute top-8 bg-gray-600 text-white px-2 py-1 rounded-md text-xs shadow-md z-[9999]">
+              Klik Gift
+            </span>
+          )}
           {/* Seal Button */}
           <button
             onClick={handleToggle}

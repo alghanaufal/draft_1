@@ -216,7 +216,7 @@ export default function App() {
             inView3={inView3}
             ref4={ref4}
             inView4={inView4}
-            bgImage={bgfull}
+            bgImage={bgfull2}
           />
           <CountdownSection
             ref5={ref5}
@@ -236,7 +236,7 @@ export default function App() {
             notAttending={notAttending}
             bgImage={bgfull2}
           />
-          <GiftSection ref8={ref8} inView8={inView8} bgImage={bgfull} />
+          <GiftSection ref8={ref8} inView8={inView8} bgImage={bgfull2} />
           <GallerySection
             ref9={ref9}
             inView9={inView9}
