@@ -4,32 +4,39 @@ const InvitationSection = ({ ref1, inView1, bgImage }) => {
   return (
     // Invitation section
     <div
-      className="h-screen flex flex-col items-center justify-center text-center p-8 relative"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="min-h-screen flex flex-col items-center justify-center text-center p-4 relative"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <div
-        className="flex flex-col justify-center items-center min-h-screen m-4"
+        className="flex flex-col justify-center items-center min-h-screen m-4 relative"
         ref={ref1}
       >
+        {/* Bunga di sebelah kiri */}
         <img
           src="/bunga2.png"
           alt="Bunga"
-          className={`absolute top-1 -left-12 w-54 h-54 transform -rotate-26 animate-sway ${
+          className={`absolute top-4 -left-6 w-44 h-44 md:w-52 md:h-52 transform -rotate-26 animate-sway z-10 ${
             inView1 ? "opacity-100" : "opacity-0"
           } transition-opacity duration-500`}
         />
+        {/* Bunga di sebelah kanan */}
         <img
           src="/bunga2.png"
           alt="Bunga"
-          className={`absolute top-1 -right-12 w-54 h-54 transform rotate-26 animate-sway ${
+          className={`absolute top-4 -right-6 w-44 h-44 md:w-52 md:h-52 transform rotate-26 animate-sway z-10 ${
             inView1 ? "opacity-100" : "opacity-0"
           } transition-opacity duration-500`}
         />
-        <div className="bg-white rounded-3xl shadow-lg overflow-hidden max-w-lg w-full relative">
+        {/* Konten undangan */}
+        <div className="bg-white rounded-3xl shadow-lg overflow-hidden max-w-lg w-full relative z-0">
           <img
             src="/1.jpeg"
             alt="Mountain"
-            className="w-full h-100 object-cover"
+            className="w-full h-68 md:h-74 object-cover"
           />
           <div className="p-6">
             <p

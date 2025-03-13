@@ -190,12 +190,15 @@ export default function App() {
 
   return (
     <div
-      className="relative min-h-screen bg-fixed bg-cover bg-center flex flex-col"
+      className="relative min-h-screen bg-fixed bg-cover bg-center flex flex-col overflow-hidden"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="absolute inset-0 bg-black opacity-45"></div>
       <div
-        className="relative flex-grow max-w-xl mx-auto border-l border-r border-white"
+        className="absolute inset-0 bg-black opacity-45"
+        aria-hidden="true"
+      ></div>
+      <div
+        className="relative flex-grow max-w-xl mx-auto w-full border-l border-r border-white overflow-hidden"
         style={{ backgroundImage: `url(${bgfull})` }}
       >
         <MusicControl
