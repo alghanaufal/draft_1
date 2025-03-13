@@ -27,7 +27,7 @@ const InvitationSection = ({ ref1, inView1, bgImage }) => {
         <img
           src="/bunga2.png"
           alt="Bunga"
-          className={`absolute top-4 -right-6 w-44 h-44 md:w-52 md:h-52 transform rotate-26 animate-sway z-10 ${
+          className={`absolute top-4 -right-6 w-44 h-44 md:w-52 md:h-52 transform rotate-26 scale-x-[-1] animate-sway z-10 ${
             inView1 ? "opacity-100" : "opacity-0"
           } transition-opacity duration-500`}
         />

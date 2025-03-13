@@ -17,22 +17,34 @@ const CoupleSection = ({
       <img
         src="/bunga4.png"
         alt="Bunga"
-        className={`absolute top-6 -left-6 w-24 h-24 transform -rotate-12 scale-x-[-1] animate-sway ${
+        className={`absolute top-12 -left-6 w-24 h-24 transform rotate-32 scale-x-[-1] animate-sway ${
           inView2 ? "opacity-100" : "opacity-0"
         } transition-opacity duration-500`}
       />
       <img
         src="/bunga4.png"
         alt="Bunga"
-        className={`absolute top-6 -right-6 w-24 h-24 transform rotate-12 animate-sway ${
+        className={`absolute top-12 -right-6 w-24 h-24 transform -rotate-32 animate-sway ${
           inView2 ? "opacity-100" : "opacity-0"
         } transition-opacity duration-500`}
       />
       <img
         src="/bunga6.png"
         alt="Bunga"
-        className={`absolute -bottom-8 left-1/2 -translate-x-1/2 w-88 h-44 -rotate-12${
-          inView4 ? "animate-fade-in-up delay-600" : "opacity-0"
+        className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-88 h-44"
+      />
+      <img
+        src="/bunga7.png"
+        alt="Bunga"
+        className={`absolute -right-2 w-24 h-24 transform rotate-12 animate-sway ${
+          inView3 && inView4 ? "opacity-100" : "opacity-0"
+        } transition-opacity duration-500`}
+      />
+      <img
+        src="/bunga7.png"
+        alt="Bunga"
+        className={`absolute -left-2 w-24 h-24 transform -rotate-12 scale-x-[-1] animate-sway ${
+          inView3 && inView4 ? "opacity-100" : "opacity-0"
         } transition-opacity duration-500`}
       />
       {/* Gambar dengan border lingkaran */}

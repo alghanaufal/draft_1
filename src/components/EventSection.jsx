@@ -18,6 +18,11 @@ const EventSection = ({ ref6, inView6, bgImage }) => {
         }}
       >
         <img
+          src="/bunga6.png"
+          alt="Bunga"
+          className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-88 h-44"
+        />
+        <img
           src="/bunga5.png"
           alt="Bunga"
           className={`absolute -top-4 -left-4 w-44 h-44 transform -rotate-12 scale-x-[-1] animate-sway ${
@@ -57,7 +62,7 @@ const EventSection = ({ ref6, inView6, bgImage }) => {
       </div>
       {/* Bagian Resepsi Nikah */}
       <div
-        className={`w-full max-w-md rounded-b-full shadow-lg relative text-center px-6 p-28 ${
+        className={`w-full max-w-md rounded-b-full shadow-lg relative text-center px-6 pb-26 pt-4 ${
           inView6 ? "animate-fade-in-up delay-200" : "opacity-0"
         }`}
         style={{
@@ -65,6 +70,11 @@ const EventSection = ({ ref6, inView6, bgImage }) => {
           boxShadow: "0 0 10px #FF8C00, 0 0 30px #FFD700",
         }}
       >
+        {/* <img
+          src="/bunga6.png"
+          alt="Bunga"
+          className="absolute -top-22 left-1/2 -translate-x-1/2 w-88 h-64"
+        /> */}
         <img
           src="/bunga1.png"
           alt="Bunga"
